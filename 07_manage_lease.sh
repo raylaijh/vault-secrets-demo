@@ -2,8 +2,6 @@
 set -o xtrace
 export VAULT_ADDR=http://localhost:8200
 
-export VAULT_TOKEN=root
-export VAULT_NAMESPACE=
 
 
 # Lease existing lease ID

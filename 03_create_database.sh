@@ -3,15 +3,17 @@ set -o xtrace
 
 export VAULT_ADDR=http://localhost:8200
 
-export VAULT_TOKEN=root
-export VAULT_NAMESPACE=
-
+vault login $VAULT_TOKEN
 
 
 # run database container
-podman run --name postgres -e POSTGRES_USER=root \
+sudo docker run --name postgres -e POSTGRES_USER=root \
          -e POSTGRES_PASSWORD=rootpassword \
          -d -p 5432:5432 postgres
+
+# sleep for 5secs
+sleep 5
+
 
 # configures the database secrets engine using postgresql-database-plugin. The allowed role is readonly
 
