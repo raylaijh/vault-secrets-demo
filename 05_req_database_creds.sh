@@ -3,6 +3,9 @@ set -o xtrace
 
 export VAULT_ADDR=http://localhost:8200
 
+# First create an apps policy, and generate a token so that you can authenticate as an apps persona
+
+
 vault policy write apps apps-policy.hcl
 
 # Create token with new apps policy
